@@ -20,11 +20,13 @@ import {
   ColorPicker,
   ColorMapping,
   Editor,
+  Line,
 } from "./pages";
 import "./App.css";
+import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   return (
     <div>
@@ -52,7 +54,7 @@ const App = () => {
           )}
           <div
             className={`"dark:bg-main-bg bg-main-bg min-h-screen w-full ${
-              activeMenu ? "md:ml=72" : "flex-2"
+              activeMenu ? "md:ml-72" : "flex-2"
             }`}
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
@@ -63,8 +65,8 @@ const App = () => {
           <div>
             <Routes>
               {/*dashboard*/}
-              <Route path="/" element={<ECommerce />} />
-              <Route path="/ecommerce" element={<ECommerce />} />
+              <Route path="/" element={<Ecommerce />} />
+              <Route path="/ecommerce" element={<Ecommerce />} />
 
               {/*pages */}
               <Route path="/orders" element={<Orders />} />
