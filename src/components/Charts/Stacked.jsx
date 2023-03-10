@@ -15,12 +15,14 @@ import {
   stackedPrimaryYAxis,
 } from "../../data/dummy";
 
-const Stacked = ({ width, height }) => {
+const Stacked = ({ width, height, color }) => {
+  console.log(color);
   return (
     <ChartComponent
       width={width}
       height={height}
       id="charts"
+      background={color == "Dark" ? "rgb(51, 55, 62)": "white"}
       primaryXAxis={stackedPrimaryXAxis}
       primaryYAxis={stackedPrimaryYAxis}
       chartArea={{ border: { width: 0 } }}
